@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos Vitrina Hotel Carretero</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .logo {
+      margin: 10px 0px 100px 0px;
+    }
+
+    .logo img {
+      width: 400px;
+      align-items: center;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 420px) {
+      .logo img {
+        width: 300px;
+      }
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 5/4;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .image-container img {
+      transform: scale(1.05);
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      cursor: pointer;
+      /* Added cursor pointer */
+      z-index: 1;
+      font-size: 18px;
+      border-radius: 10%;
+    }
+
+    .prev-btn {
+      left: 8px;
+    }
+
+    .next-btn {
+      right: 8px;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .card-price {
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/Logo-Hotel.png" alt="logo hotel carretero y hotel termales derl ruiz">
+    </div>
+  </header>
+  <div class="title">
+    <h2>Vitrina Hotel Carretero</h2>
+  </div>
+  <div class="grid-container">
+
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(0)">&#8249;</button>
+        <img id="product-img-0" src="" alt="Café Proceso Natural">
+        <button class="nav-button next-btn" onclick="nextImage(0)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Café Proceso Natural 250Gr</div>
+        <div class="card-price">$35.000 COP</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(1)">&#8249;</button>
+        <img id="product-img-1" src="" alt="Café Proceso Honey">
+        <button class="nav-button next-btn" onclick="nextImage(1)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Café Proceso Honey 250Gr</div>
+        <div class="card-price">$35.000 COP</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(2)">&#8249;</button>
+        <img id="product-img-2" src="" alt="Café Molido Premium">
+        <button class="nav-button next-btn" onclick="nextImage(2)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Café Molido Premium 500Gr</div>
+        <div class="card-price">$45.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(3)">&#8249;</button>
+        <img id="product-img-3" src="" alt="Café En Grano">
+        <button class="nav-button next-btn" onclick="nextImage(3)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Café En Grano 250Gr</div>
+        <div class="card-price">$35.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(4)">&#8249;</button>
+        <img id="product-img-4" src="" alt="Guía Tucanes">
+        <button class="nav-button next-btn" onclick="nextImage(4)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Guía Tucanes</div>
+        <div class="card-price">$20.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(5)">&#8249;</button>
+        <img id="product-img-5" src="" alt="Guía Grallarias">
+        <button class="nav-button next-btn" onclick="nextImage(5)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Guía Grallarias</div>
+        <div class="card-price">$20.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(6)">&#8249;</button>
+        <img id="product-img-6" src="" alt="Guía Aves Rapaces">
+        <button class="nav-button next-btn" onclick="nextImage(6)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Guía Aves Rapaces</div>
+        <div class="card-price">$20.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(7)">&#8249;</button>
+        <img id="product-img-7" src="" alt="Guía Colibrí">
+        <button class="nav-button next-btn" onclick="nextImage(7)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Guía Colibrí</div>
+        <div class="card-price">$20.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(8)">&#8249;</button>
+        <img id="product-img-8" src="" alt="Guía Loros">
+        <button class="nav-button next-btn" onclick="nextImage(8)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Guía Loros</div>
+        <div class="card-price">$20.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(9)">&#8249;</button>
+        <img id="product-img-9" src="" alt="Buzo Polar">
+        <button class="nav-button next-btn" onclick="nextImage(9)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Buzo Polar</div>
+        <div class="card-price">$115.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(10)">&#8249;</button>
+        <img id="product-img-10" src="" alt="Buzo Hoodie">
+        <button class="nav-button next-btn" onclick="nextImage(10)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Buzo Hoodies</div>
+        <div class="card-price">$150.000</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="image-container">
+        <button class="nav-button prev-btn" onclick="prevImage(11)">&#8249;</button>
+        <img id="product-img-11" src="" alt="Morral Termales Del Ruiz">
+        <button class="nav-button next-btn" onclick="nextImage(11)">&#8250;</button>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Morral Termales Del Ruiz</div>
+        <div class="card-price">$50.000</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>
+      Los precios de venta incluyen Impuestos
+    </p>
+  </footer>
+
+  <script>
+    // Imágenes por producto - **ACTUALIZA ESTAS RUTAS CON TUS IMÁGENES REALES**
+    const productImages = [
+      [
+        "img/cafe_natural_1.jpeg",
+        "img/cafe_natural_2.jpeg",
+        "img/cafe_natural_3.jpeg"
+      ],
+      [
+        "img/cafe_honey_1.jpeg",
+        "img/cafe_honey_2.jpeg",
+        "img/cafe_honey_3.jpeg"
+      ],
+      [
+        "img/cafe_molido_premium_1.jpeg",
+        "img/cafe_molido_premium_2.jpeg"
+      ],
+      [
+        "img/cafe_grano_1.jpeg",
+        "img/cafe_grano_2.jpeg"
+      ],
+      [
+        "img/guia_tucanes_1.jpeg",
+        "img/guia_tucanes_2.jpeg"
+      ],
+      [
+        "img/guia_grallarias_1.jpeg",
+        "img/guia_grallarias_2.jpeg"
+      ],
+      [
+        "img/guia_aves_rapaces_1.jpeg",
+        "img/guia_aves_rapaces_2.jpeg"
+      ],
+      [
+        "img/guia_colibri_1.jpeg",
+        "img/guia_colibri_2.jpeg"
+      ],
+      [
+        "img/guia_loros_1.jpeg",
+        "img/guia_loros_2.jpeg"
+      ],
+      [
+        "img/buzo_polar_1.jpeg",
+        "img/buzo_polar_2.jpeg",
+        "img/buzo_polar_3.jpeg"
+      ],
+      [
+        "img/Buzo-Hoddies1.jpg",
+        "img/Buzo-Hoddies2.jpg",
+        "img/Buzo-Hoddies3.jpg",
+        "img/Buzo-Hoddies4.jpg",
+        "img/Buzo-Hoddies5.jpg",
+        "img/Buzo-Hoddies6.jpg",
+        "img/Buzo-Hoddies7.jpg",
+        "img/Buzo-Hoddies8.jpg"
+      ],
+      [
+        "img/morral_termales_1.jpeg",
+        "img/morral_termales_2.jpeg"
+      ]
+    ];
+
+    // Mantiene el índice de la imagen actual para cada producto
+    const currentIndexes = new Array(productImages.length).fill(0);
+
+    function updateImage(productIndex) {
+      const img = document.getElementById(`product-img-${productIndex}`);
+      // Solo actualiza si el producto y el índice de imagen existen
+      if (img && productImages[productIndex] && productImages[productIndex][currentIndexes[productIndex]]) {
+        img.src = productImages[productIndex][currentIndexes[productIndex]];
+      }
+    }
+
+    function nextImage(productIndex) {
+      const total = productImages[productIndex].length;
+      currentIndexes[productIndex] = (currentIndexes[productIndex] + 1) % total;
+      updateImage(productIndex);
+    }
+
+    function prevImage(productIndex) {
+      const total = productImages[productIndex].length;
+      currentIndexes[productIndex] = (currentIndexes[productIndex] - 1 + total) % total;
+      updateImage(productIndex);
+    }
+
+    // Llama a updateImage para cada producto al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+      for (let i = 0; i < productImages.length; i++) {
+        updateImage(i);
+      }
+    });
+  </script>
+
+</body>
+
+</html>
